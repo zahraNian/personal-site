@@ -1,7 +1,6 @@
 import './App.css'
 import styled from 'styled-components'
 import picture2 from './Capture3.PNG'
-import {Link} from 'react-router-dom'
 import email from './icons8-email-64.png'
 import phone from './icons8-phone-64.png'
 import linkedin from './icons8-linkedin-64.png'
@@ -78,7 +77,7 @@ const Container=styled.div({
                     </div>
                     <Column className='content'>
                         <Row><Row><Image src={email}/>Email :&nbsp;</Row> zahraesfsndiaryy1999 @gmail.com</Row>
-                        <Row><Row><Image src={linkedin}/>Linkedin  :&nbsp;</Row> <Link to='https://www.linkedin.com/in/zahra-esfandiary-bb9545169' target='-blank'> Linkedin</Link></Row>
+                        <Row><Row><Image src={linkedin}/>Linkedin  :&nbsp;</Row> <a href='https://www.linkedin.com/in/zahra-esfandiary-bb9545169' target='-blank'> Linkedin</a></Row>
                         <Row><Row><Image src={phone}/>Phone Number :&nbsp;</Row> +98 9367144313</Row>
                     </Column>
                 </Column>
