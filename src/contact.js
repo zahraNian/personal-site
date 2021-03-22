@@ -4,6 +4,7 @@ import picture2 from './Capture3.PNG'
 import email from './icons8-email-64.png'
 import phone from './icons8-phone-64.png'
 import linkedin from './icons8-linkedin-64.png'
+import {Animate} from 'react-simple-animate'
 const Row=styled.div({
     display:'flex',
     flexFlow:'row wrap',
@@ -14,7 +15,7 @@ const Column=styled.div({
     display:'flex',
     flexDirection:'column',
     justifyContent:'center',
-    alignItems:'center'
+    alignItems:'center',
 })
 const Image=styled.img({
     width:'25px'
@@ -67,12 +68,15 @@ const Container=styled.div({
 })
     export default function Contact(){
     return(
-        <Column>
+        <Animate play start={{opacity:0}} end={{opacity:1}}>
+            <Column>
             <Container>
                 <Column>
                     <div className='header'>
                         <Column className='headerOpacity'>
-                            <p>contact</p>
+                            <Animate play start={{marginTop:-50}} end={{marginTop:10}}>
+                                <p>contact</p>
+                            </Animate>    
                         </Column>
                     </div>
                     <Column className='content'>
@@ -80,8 +84,9 @@ const Container=styled.div({
                         <Row><Row><Image src={linkedin}/>Linkedin  :&nbsp;</Row> <a href='https://www.linkedin.com/in/zahra-esfandiary-bb9545169' target='-blank'> Linkedin</a></Row>
                         <Row><Row><Image src={phone}/>Phone Number :&nbsp;</Row> +98 9367144313</Row>
                     </Column>
-                </Column>
+                </Column>       
             </Container>
-        </Column>
+            </Column>
+        </Animate>      
     )
 }

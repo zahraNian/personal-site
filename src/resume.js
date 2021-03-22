@@ -1,6 +1,7 @@
 
 import styled from 'styled-components'
 import picture2 from './Capture3.PNG'
+import {Animate} from 'react-simple-animate'
 const Row=styled.div({
     display:'flex',
     flexFlow:'row wrap',
@@ -62,12 +63,15 @@ const Container=styled.div({
 })
     export default function Resume(){
     return(
+        <Animate play start={{opacity:0}} end={{opacity:1}}>
         <Column>
             <Container>
                 <Column>
                     <div className='header'>
                         <Column className='headerOpacity'>
-                            <p>Resume</p>
+                            <Animate play start={{marginTop:-50}} end={{marginTop:10}}>
+                                <p>Resume</p>
+                            </Animate>    
                         </Column>
                     </div>
                     <Row className='content'>
@@ -96,5 +100,6 @@ const Container=styled.div({
                 </Column>
             </Container>
         </Column>
+        </Animate>
     )
 }

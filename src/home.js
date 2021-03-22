@@ -3,6 +3,7 @@ import './App.css'
 import picture1 from './0bc4dae5-e453-4241-a8ab-bf586208fc7b.jpg'
 import picture2 from './Capture3.PNG'
 import styled from 'styled-components'
+import {Animate} from 'react-simple-animate'
 
 const Row=styled.div({
     display:'flex',
@@ -36,16 +37,18 @@ const Container=styled.div({
                 width:'100%',
                 borderTopLeftRadius:'25px',
                 borderTopRightRadius:'25px',
+                '&>div':{
             '&>img':{
                 height:'250px',
                 borderRadius:'20px',
                 boxShadow:'0px 0px 15px 5px gray',
                 margin:'10px',
                 position:'relative',
-                top:'40px',
-            },
+                top:'40px'
+            }},
             '&>div.name':{
                 width:'40%',
+                minWidth:'250px',
                 color:'white',
                 '&>p':{
                     fontSize:'50px',
@@ -53,6 +56,7 @@ const Container=styled.div({
                     color:'#535061',
                     position:'relative',
                     top:'55px',
+                    width:'100%',
                     color:'white'
                 }
             }
@@ -91,12 +95,15 @@ const Container=styled.div({
 
 export default function Home(){
     return(
+        <Animate play start={{opacity:0}} end={{opacity:1}}>
         <Column >
             <Container >
                 <Row className='containerFirst'>
                     <div className='first'>
                         <Row className='firstOpaciry'>
-                            <img src={picture1}/>
+                            <Animate play start={{marginTop:-50}} end={{marginTop:10}}>
+                                <img src={picture1}/>
+                            </Animate>
                             <Column className="name">
                                 <p>Zahra Esfandiary</p>
                                 developer
@@ -125,5 +132,6 @@ export default function Home(){
                     </Row>
             </Container>
         </Column>    
+        </Animate>
     )
 }
