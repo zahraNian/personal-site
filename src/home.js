@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import {Animate} from 'react-simple-animate'
 import picture3 from './icons8-gitlab-48.png'
 import picture4 from './icons8-telegram-app-48.png'
+import picture5 from './icons8-linkedin-circled-48.png'
 
 const Row=styled.div({
     display:'flex',
@@ -45,7 +46,8 @@ const Container=styled.div({
                 boxShadow:'0px 0px 15px 5px gray',
                 margin:'10px',
                 position:'relative',
-                top:'40px'
+                top:'40px',
+                border:'1px solid rgb(190, 190, 190)',
             },
             '&>div.name':{
                 width:'40%',
@@ -58,10 +60,10 @@ const Container=styled.div({
                     position:'relative',
                     top:'55px',
                     width:'100%',
-                    color:'white'
+                    color:'white',
                 },
                 '&>div':{
-                    width:'80px',
+                    width:'115px',
                 '&>a':{
                     '&>img':{
                         width:'30px',
@@ -117,13 +119,14 @@ export default function Home(){
                 <Row className='containerFirst'>
                     <div className='first'>
                         <Row className='firstOpaciry'>
-                               <img src={picture1}/>
+                              <img src={picture1}/> 
                             <Column className="name">
                                 <p>Zahra Esfandiary</p>
                                 developer
                                 <Row>
                                     <a href='https://gitlab.com/ZahraNian'> <img src={picture3}/></a>
                                     <a href='https://t.me/Zahra_esN'> <img src={picture4}/></a>
+                                    <a href='https://www.linkedin.com/in/zahra-esfandiary-bb9545169'><img src={picture5}/></a>
                                 </Row>
                             </Column>
                         </Row>

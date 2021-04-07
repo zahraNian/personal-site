@@ -59,7 +59,7 @@ const Container=styled.div({
                 '&>div':{
                     fontWeight:'bold',
                     '&>img':{
-                        marginRight:'5px'
+                        marginRight:'5px',
                     }
                 }        
             }    
