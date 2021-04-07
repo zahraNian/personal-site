@@ -7,6 +7,7 @@ import Contact from './contact.js'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import {Link} from 'react-router-dom'
 import {useState} from 'react'
+import {Animate} from 'react-simple-animate'
 const Column=styled.div({
   display:'flex',
   flexDirection:'column',
@@ -19,13 +20,14 @@ const Menue=styled.div({
   flexDirection:'crow',
   justifyContent:'flex-end',
   alignItems:'center',
-  backgroundColor:'#8C939C',
+  backgroundColor:'#9Ca3aC',
   marginBottom:'20px',
   position:'fixed',
   top:'0px',
   rigth:'0px',
   left:'0px',
   zIndex:'2',
+  boxShadow:'0px 0px 5px 1px gray',
   '&>button':{
   width:'30px',
   height:'30px',
@@ -34,7 +36,10 @@ const Menue=styled.div({
   backgroundImage:`url(${menue})`,
   backgroundSize:'100% 100%',
   marginRight:'20px',
-  borderRadius:'7px'
+  borderRadius:'7px',
+  '&:hover':{
+    transform:'scale(1.1)'
+  }
   }
 })
 const Absolue=styled.div({
@@ -54,6 +59,11 @@ const Absolue=styled.div({
     justifyContent:'center',
     alignItems:'center',
     lineHeight:'3',
+    '&>a':{
+      '&:hover':{
+        transform:'scale(1.1)'
+      }
+    }
 })
 export default function App(){
   const [Show,setShow]=useState()
@@ -64,13 +74,13 @@ export default function App(){
     <Router>
       <Column>
         <Menue>
-          <button onClick={Visibility} />
+          <button title='منو' onClick={Visibility} />
         </Menue>
-        <Absolue style={{visibility:Show? 'visible' :'hidden'}}>
-          <Link onClick={() =>setShow(false)} to='/'>Home </Link>
-          <Link onClick={() =>setShow(false)} to='/resume'>Resume</Link>
-          <Link onClick={() =>setShow(false)} to='/contact'>Contact</Link>
-        </Absolue>
+          <Absolue style={{visibility:Show? 'visible' :'hidden'}}>
+            <Link onClick={() =>setShow(false)} to='/'>Home </Link>
+            <Link onClick={() =>setShow(false)} to='/resume'>Resume</Link>
+            <Link onClick={() =>setShow(false)} to='/contact'>Contact</Link>
+          </Absolue>
       </Column>
       <Switch>
         <Route path='/'component={Home} exact/>
