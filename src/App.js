@@ -74,7 +74,7 @@ export default function App(){
     <Router>
       <Column>
         <Menue>
-          <button title='منو' onClick={Visibility} />
+          <button title='menue' onClick={Visibility} />
         </Menue>
           <Absolue style={{visibility:Show? 'visible' :'hidden'}}>
             <Link onClick={() =>setShow(false)} to='/'>Home </Link>

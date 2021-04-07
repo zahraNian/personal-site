@@ -4,6 +4,8 @@ import picture1 from './0bc4dae5-e453-4241-a8ab-bf586208fc7b.jpg'
 import picture2 from './Capture3.PNG'
 import styled from 'styled-components'
 import {Animate} from 'react-simple-animate'
+import picture3 from './icons8-gitlab-48.png'
+import picture4 from './icons8-telegram-app-48.png'
 
 const Row=styled.div({
     display:'flex',
@@ -58,7 +60,20 @@ const Container=styled.div({
                     top:'55px',
                     width:'100%',
                     color:'white'
+                },
+                '&>div':{
+                    width:'80px',
+                '&>a':{
+                    '&>img':{
+                        width:'30px',
+                        height:'30px',
+                        marginTop:'20px',
+                        '&:hover':{
+                            transform:'scale(1.1)'
+                        }
+                    }
                 }
+            }
             }
         }
         },
@@ -70,7 +85,8 @@ const Container=styled.div({
                 justifyContent:'space-around',
                 padding:'10px',
             '&>div.about':{
-                width:'290px',
+                width:'calc(100% - 20px)',
+                maxWidth:'300px',
                 alignItems:'flex-start',
                 textAlign:'justify',
                 justifyContent:'flex-start',
@@ -82,7 +98,8 @@ const Container=styled.div({
             },
             '&>div.info':{
                 marginTop:'50px',
-                width:'300px',
+                width:'calc(100% - 20px)',
+                maxWidth:'300px',
                 borderRadius:'15px',
                 lineHeight:'0.1',
                 '&>div.info':{
@@ -102,11 +119,15 @@ export default function Home(){
                     <div className='first'>
                         <Row className='firstOpaciry'>
                             <Animate play start={{marginTop:-50}} end={{marginTop:10}}>
-                                <img src={picture1}/>
+                               <img src={picture1}/>
                             </Animate>
                             <Column className="name">
                                 <p>Zahra Esfandiary</p>
                                 developer
+                                <Row>
+                                    <a href='https://gitlab.com/ZahraNian'> <img src={picture3}/></a>
+                                    <a href='https://t.me/Zahra_esN'> <img src={picture4}/></a>
+                                </Row>
                             </Column>
                         </Row>
                     </div>
