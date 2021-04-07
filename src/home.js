@@ -39,7 +39,6 @@ const Container=styled.div({
                 width:'100%',
                 borderTopLeftRadius:'25px',
                 borderTopRightRadius:'25px',
-                '&>div':{
             '&>img':{
                 height:'250px',
                 borderRadius:'20px',
@@ -47,7 +46,7 @@ const Container=styled.div({
                 margin:'10px',
                 position:'relative',
                 top:'40px'
-            }},
+            },
             '&>div.name':{
                 width:'40%',
                 minWidth:'250px',
@@ -112,15 +111,13 @@ const Container=styled.div({
 
 export default function Home(){
     return(
-        <Animate play start={{opacity:0}} end={{opacity:1}}>
+        <Animate play start={{opacity:0},{marginTop:-50}} end={{opacity:1},{marginTop:10}}>
         <Column >
             <Container >
                 <Row className='containerFirst'>
                     <div className='first'>
                         <Row className='firstOpaciry'>
-                            <Animate play start={{marginTop:-50}} end={{marginTop:10}}>
                                <img src={picture1}/>
-                            </Animate>
                             <Column className="name">
                                 <p>Zahra Esfandiary</p>
                                 developer
