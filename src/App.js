@@ -16,6 +16,7 @@ const Column=styled.div({
 })
 const Menue=styled.div({
   width:'100%',
+  height:'33px',
   display:'flex',
   flexDirection:'crow',
   justifyContent:'flex-end',
@@ -28,20 +29,48 @@ const Menue=styled.div({
   left:'0px',
   zIndex:'2',
   boxShadow:'0px 0px 5px 1px gray',
-  '&>button':{
-  width:'30px',
-  height:'30px',
-  marginTop:'3px',
-  marginBottom:'3px',
-  backgroundImage:`url(${menue})`,
-  backgroundSize:'100% 100%',
-  marginRight:'20px',
-  borderRadius:'7px',
-  '&:hover':{
-    transform:'scale(1.1)'
-  }
-  }
 })
+const Button=styled.button`
+  width:30px;
+  height:30px;
+  margin-top:3px;
+  margin-bottom:3px;
+  background-image:url(${menue});
+  background-size:100% 100%;
+  margin-right:5px;
+  border-radius:7px;
+  position:fixed;
+  top:0px;
+  right:0px;
+  @media (min-width : 420px){
+    visibility:hidden;
+  }
+  :hover{
+    transform:scale(1.1);
+  }
+  }`
+  const Navbar=styled.div`
+  @media (max-width : 420px){
+    visibility:hidden;
+  };
+  margin-right:20px;
+  display:flex;
+  flex-flow:row-wrap;
+  justify-content:space-between;
+  align-items:center;
+  width:250px;
+  .a{
+    color:white;
+    font-weight:bold;
+    text-decoration:none;
+    :active{
+      color:blue;
+    }
+    :hover{
+      transform:scale(1.1);
+    }
+  }
+  `
 const Absolue=styled.div({
     position:'fixed',
     rigth:'100px',
@@ -60,8 +89,13 @@ const Absolue=styled.div({
     alignItems:'center',
     lineHeight:'3',
     '&>a':{
+      color:'black',
+      textDecoration:'none',
       '&:hover':{
         transform:'scale(1.1)'
+      },
+      '&:active':{
+        color:'blue'
       }
     }
 })
@@ -74,7 +108,12 @@ export default function App(){
     <Router>
       <Column>
         <Menue>
-          <button title='menue' onClick={Visibility} />
+          <Button title='menue' onClick={Visibility} />
+          <Navbar>
+            <Link className='a' to='/contact'>Contact</Link>
+            <Link className='a' to='/resume'>Resume</Link>
+            <Link className='a' to='/'>Home</Link>
+          </Navbar>
         </Menue>
           <Absolue style={{visibility:Show? 'visible' :'hidden'}}>
             <Link onClick={() =>setShow(false)} to='/'>Home </Link>
