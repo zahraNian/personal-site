@@ -5,8 +5,9 @@ import Home from './home.js'
 import styled from 'styled-components'
 import Contact from './contact.js'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import {Link} from 'react-router-dom'
-import {useState} from 'react'
+import {Link, NavLink} from 'react-router-dom'
+import {useState,useEffect, Component } from 'react'
+import React from 'react';
 import {Animate} from 'react-simple-animate'
 const Column=styled.div({
   display:'flex',
@@ -63,9 +64,6 @@ const Button=styled.button`
     color:white;
     font-weight:bold;
     text-decoration:none;
-    :active{
-      color:blue;
-    }
     :hover{
       transform:scale(1.1);
     }
@@ -89,18 +87,15 @@ const Absolue=styled.div({
     alignItems:'center',
     lineHeight:'3',
     '&>a':{
-      color:'black',
       textDecoration:'none',
       '&:hover':{
         transform:'scale(1.1)'
       },
-      '&:active':{
-        color:'blue'
-      }
     }
 })
 export default function App(){
   const [Show,setShow]=useState()
+   
   function Visibility(){
     return(setShow(!Show))
   }
@@ -109,22 +104,26 @@ export default function App(){
       <Column>
         <Menue>
           <Button title='menue' onClick={Visibility} />
+
           <Navbar>
-            <Link className='a' to='/contact'>Contact</Link>
-            <Link className='a' to='/resume'>Resume</Link>
-            <Link className='a' to='/'>Home</Link>
+            <NavLink className='a' to='/contact' activeStyle={{textDecoration:'underLine'}} >Contact</NavLink>
+            <NavLink className='a' to='/resume' activeStyle={{textDecoration:'underLine'}}>Resume</NavLink>
+            <NavLink className='a' to='/home' activeStyle={{textDecoration:'underLine'}}>Home</NavLink>
           </Navbar>
         </Menue>
           <Absolue style={{visibility:Show? 'visible' :'hidden'}}>
-            <Link onClick={() =>setShow(false)} to='/'>Home </Link>
-            <Link onClick={() =>setShow(false)} to='/resume'>Resume</Link>
-            <Link onClick={() =>setShow(false)} to='/contact'>Contact</Link>
+            <NavLink onClick={() =>setShow(false)} to='/home' activeStyle={{textDecoration:'underLine', fontWeight:'bold'}}>Home </NavLink>
+            <NavLink onClick={() =>setShow(false)} to='/resume' activeStyle={{textDecoration:'underLine', fontWeight:'bold'}}>Resume</NavLink>
+            <NavLink onClick={() =>setShow(false)} to='/contact' activeStyle={{textDecoration:'underLine', fontWeight:'bold'}}>Contact</NavLink>
           </Absolue>
+
+       
       </Column>
       <Switch>
-        <Route path='/'component={Home} exact/>
         <Route path='/resume' component={Resume}/>
         <Route path='/contact' component={Contact}/>
+        <Route path='/home' component={Home}/>
+        <Route path='/' component={()=>{window.location.href='/home'}}/>
       </Switch>  
     </Router>
   )
