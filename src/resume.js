@@ -86,14 +86,11 @@ const Container=styled.div({
                             <p><h2>HTML</h2>(Upper-intermediate)</p>
                             <p><h2>CSS</h2>(Upper-intermediate)</p>
                             <p><h2>JS</h2>(Upper-intermediate)</p>
-                            <p><h2>REACT</h2>(Upper-intermediate)</p>
+                            <p><h2>REACT JS</h2>(intermediate)</p>
                             <p><h2>git</h2>(Upper-intermediate)</p>
                             <p><h2>styled-components</h2>(Upper-intermediate)</p>
                             <p><h2>reST-API</h2>(Upper-intermediate)</p>
                             <p><h2>PLC Siemens S7-200, S7-300:<br/> SIMATIC MANAGER, programming-Digital</h2>(Upper-intermediate)</p>
-                            <p><h2>MATLAB, Simulink</h2>(Intermediate)</p>
-                            <p><h2> EPlan</h2>(Basic)</p>
-                            <p><h2>Proteus</h2>(Intermediate)</p>
                             <p><h2> Microsoft Office: Powerpoint, Word, Excel</h2>(Upper-intermediate)</p>
                         </Column>
                     </Row>
