@@ -7,6 +7,7 @@ import {Animate} from 'react-simple-animate'
 import picture3 from './icons8-gitlab-48.png'
 import picture4 from './icons8-telegram-app-48.png'
 import picture5 from './icons8-linkedin-circled-48.png'
+import { animate, transform } from 'framer-motion'
 
 const Row=styled.div({
     display:'flex',
@@ -18,7 +19,11 @@ const Column=styled.div({
     display:'flex',
     flexDirection:'column',
     justifyContent:'flex-start',
-    alignItems:'center'
+    alignItems:'center',
+    '&>span':{
+        transition:'animation 2s',
+        animation:'Anim 3s infinite 2s',
+    }
 })
 const Container=styled.div({
         width:'90%',
@@ -112,6 +117,7 @@ const Container=styled.div({
 })
 
 export default function Home(){
+
     return(
         <Animate play start={{opacity:0},{marginTop:-50}} end={{opacity:1},{marginTop:10}}>
         <Column >
@@ -122,7 +128,7 @@ export default function Home(){
                               <img src={picture1}/> 
                             <Column className="name">
                                 <p>Zahra Esfandiary</p>
-                                developer
+                                <span >front-end developer</span>
                                 <Row>
                                     <a href='https://gitlab.com/ZahraNian'> <img src={picture3}/></a>
                                     <a href='https://t.me/Zahra_esN'> <img src={picture4}/></a>
