@@ -1,5 +1,5 @@
 import './App.css'
-import menue from './icons8-menu-24.png'
+import menue from './icons8-menu-50.png'
 import Delete from "./icons8-multiply-50 (1).png"
 import Resume from './resume.js'
 import Home from './home.js'
@@ -38,10 +38,11 @@ const Button=styled.button`
   margin-top:3px;
   margin-bottom:3px;
   background-size:100% 100%;
-  margin-right:5px;
-  border-radius:7px;
+  background-color:#9Ca3aC;
+  margin-right:15px;
   position:fixed;
   top:0px;
+  border:none;
   right:0px;
   @media (min-width : 420px){
     visibility:hidden;
@@ -72,10 +73,10 @@ const Button=styled.button`
 const Absolue=styled.div({
     position:'fixed',
     rigth:'100px',
-    top:'39px',
+    top:'37px',
     width:'100%',
     height:'250px',
-    backgroundColor:'#f0f0f0',
+    backgroundColor:'#fff',
     boxShadow:'0px 0px 15px 3px gray',
     zIndex:'2',
     borderTopRightRadius:'0px',
