@@ -83,7 +83,7 @@ const Container=styled.div({
                         </Column>
                     </div>
                     <Column className='content'>
-                        <Row><Row><Image src={email}/>Email :&nbsp;</Row><a href="mailto:zahraesfandiaryy1999@gmail.com">zahraesfsndiaryy1999 @gmail.com</a> </Row>
+                        <Row><Row><Image src={email}/>Email :&nbsp;</Row><a href="mailto:zahraesfandiaryy1999@gmail.com">zahraesfsndiaryy1999@gmail.com</a> </Row>
                         <Row><Row><Image src={linkedin}/>Linkedin  :&nbsp;</Row> <a href='https://www.linkedin.com/in/zahra-esfandiary-bb9545169' target='-blank'> Linkedin</a></Row>
                         <Row><Row><Image src={phone}/>Phone Number :&nbsp;</Row> +98 9367144313</Row>
                     </Column>

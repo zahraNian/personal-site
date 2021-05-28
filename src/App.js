@@ -1,5 +1,6 @@
 import './App.css'
-import menue from './icons8-menu-48.png'
+import menue from './icons8-menu-24.png'
+import Delete from "./icons8-multiply-50 (1).png"
 import Resume from './resume.js'
 import Home from './home.js'
 import styled from 'styled-components'
@@ -17,7 +18,7 @@ const Column=styled.div({
 })
 const Menue=styled.div({
   width:'100%',
-  height:'33px',
+  height:'36px',
   display:'flex',
   flexDirection:'crow',
   justifyContent:'flex-end',
@@ -36,7 +37,6 @@ const Button=styled.button`
   height:30px;
   margin-top:3px;
   margin-bottom:3px;
-  background-image:url(${menue});
   background-size:100% 100%;
   margin-right:5px;
   border-radius:7px;
@@ -72,13 +72,11 @@ const Button=styled.button`
 const Absolue=styled.div({
     position:'fixed',
     rigth:'100px',
-    top:'30px',
-    width:'250px',
+    top:'39px',
+    width:'100%',
     height:'250px',
     backgroundColor:'#f0f0f0',
     boxShadow:'0px 0px 15px 3px gray',
-    border:'5px outset #8CAEBA',
-    borderRadius:'13px',
     zIndex:'2',
     borderTopRightRadius:'0px',
     display:'flex',
@@ -103,7 +101,7 @@ export default function App(){
     <Router>
       <Column>
         <Menue>
-          <Button title='menue' onClick={Visibility} />
+          <Button title='menue' onClick={Visibility} style={{backgroundImage:Show?`url(${Delete})`:`url(${menue})`}} />
 
           <Navbar>
             <NavLink className='a' to='/contact' activeStyle={{textDecoration:'underLine'}} >Contact</NavLink>
@@ -111,10 +109,10 @@ export default function App(){
             <NavLink className='a' to='/home' activeStyle={{textDecoration:'underLine'}}>Home</NavLink>
           </Navbar>
         </Menue>
-          <Absolue style={{visibility:Show? 'visible' :'hidden'}}>
-            <NavLink onClick={() =>setShow(false)} to='/home' activeStyle={{textDecoration:'underLine', fontWeight:'bold'}}>Home </NavLink>
-            <NavLink onClick={() =>setShow(false)} to='/resume' activeStyle={{textDecoration:'underLine', fontWeight:'bold'}}>Resume</NavLink>
-            <NavLink onClick={() =>setShow(false)} to='/contact' activeStyle={{textDecoration:'underLine', fontWeight:'bold'}}>Contact</NavLink>
+          <Absolue style={{visibility:Show? 'visible' :'hidden',animation:Show?'Opening 0.2s linear': void(0)}}>
+            <NavLink onClick={() =>setShow(false)} to='/home' style={{animation:Show?'Showing 0.2s linear':void(0)}} activeStyle={{textDecoration:'underLine', fontWeight:'bold'}}>Home </NavLink>
+            <NavLink onClick={() =>setShow(false)} to='/resume' style={{animation:Show?'Showing 0.2s linear':void(0)}} activeStyle={{textDecoration:'underLine', fontWeight:'bold'}}>Resume</NavLink>
+            <NavLink onClick={() =>setShow(false)} to='/contact' style={{animation:Show?'Showing 0.2s linear':void(0)}} activeStyle={{textDecoration:'underLine', fontWeight:'bold'}}>Contact</NavLink>
           </Absolue>
 
        

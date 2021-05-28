@@ -137,7 +137,7 @@ export default function Home(){
                             About me
                         </h>
                         <p>
-                            Hello I'm Zahra Esfandiary.I'm studying electricity engineering at IKIU since 2017.I develop and design websites using HTML, CSS and JavaScript React.
+                            Hello I'm Zahra Esfandiary.I'm studying electricity engineering at IKIU since 2017.I develop and design websites using HTML, CSS and React JS.
                             on the other hand,i have programmed some monitoring projects using PLC, interested in coding in this field too.
                         </p>
                     </Column>
@@ -145,7 +145,7 @@ export default function Home(){
                         <Row className="info"><p>Age</p> <p>22</p></Row>
                         <Row className="info"><p>Residence</p> <p>Iran</p></Row>
                         <Row className="info"><p>Address</p> <p>Alborz, Iran</p></Row>
-                        <Row className="info"><p>e-mail </p><p>zahraesfandiaryy1999@gmail.com</p></Row>
+                        <Row className="info"><p>e-mail </p><p href='mailto:zahraesfandiaryy1999@gmail.com'>zahraesfandiaryy1999@gmail.com</p></Row>
                         <Row className="info"><p>Phone</p> <p>+98 9367144313</p></Row>
                         <Row className="info"><p>Freelance</p> <p>Available</p></Row>
                     </div>
